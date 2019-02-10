@@ -5,26 +5,26 @@ Project to determine the probability of a wikipedia comment being toxic, severe_
 The dataset for this problem can be found in this link --> https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge/data
 
 ## Methods Used
-### Removing Punctuations
+#### Removing Punctuations
 * Used the string package which has list of english punctuations to remove the punctuations from the sentences.
 * This is done because helps in processing the text later.
 * Alternate approach is to convert these punctuation to specific words.
 
-### Removing Stopwords
+#### Removing Stopwords
 * Stopwords does not give postivity or negativity of the sentence.
 * This is done using nltk.corpus.stopwords.
 
-### Lemmatizing and Stemming
+#### Lemmatizing and Stemming
 * Lemmatizing is done using nltk.WordNetLemmatizer. 
 * Lemmatizer ignores the words that is not present in it's own vocabulary. So, that is taken care by Stemming.
 * Stemming is crude pruning done using nltk.PorterStemmer.
 
-### Bag of words (Generating a frequency vector)
+#### Bag of words (Generating a frequency vector)
 * Implemented using sklearn.feature_extraction.text.CountVectorizer. 
 * This gives back a sparse matrix of frequency of words.
 * Also, the value of n in n-grams can be set using this function.
 
-### Tf-Idf
+#### Tf-Idf
 * Calculated Tfidf values using sklearn.feature_extraction.text.TfidfVectorizer. 
 * This gives a sparse matrix of Tf-Idf values.
 
