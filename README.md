@@ -7,16 +7,20 @@ The dataset for this problem can be found in this link --> https://www.kaggle.co
 ## Methods Used
 #### Removing Punctuations
 * Used the string package which has list of english punctuations to remove the punctuations from the sentences.
-* This is done because helps in processing the text later.
+* This is done because it helps in processing the text later.
 * Alternate approach is to convert these punctuation to specific words.
+
+#### Tokenization
+* All the words are made seperate elements.
+* Implemented using 're' package of regular expression.
 
 #### Removing Stopwords
 * Stopwords does not give postivity or negativity of the sentence.
-* This is done using nltk.corpus.stopwords.
+* Removing stopwords is done using nltk.corpus.stopwords.
 
 #### Lemmatizing and Stemming
 * Lemmatizing is done using nltk.WordNetLemmatizer. 
-* Lemmatizer ignores the words that is not present in it's own vocabulary. So, that is taken care by Stemming.
+* Lemmatizer ignores the words that is not present in it's own vocabulary. So, those are taken care by Stemming.
 * Stemming is crude pruning done using nltk.PorterStemmer.
 
 #### Bag of words (Generating a frequency vector)
@@ -27,6 +31,7 @@ The dataset for this problem can be found in this link --> https://www.kaggle.co
 #### Tf-Idf
 * Calculated Tfidf values using sklearn.feature_extraction.text.TfidfVectorizer. 
 * This gives a sparse matrix of Tf-Idf values.
+* Also, the value of n in n-grams can be set using this function.
 
 ## Model
 * Used Logistic Regression to train for each label ie Toxic, Severe_toxic.etc
@@ -35,5 +40,5 @@ The dataset for this problem can be found in this link --> https://www.kaggle.co
 This approach has given a score(AUC) of 97% in kaggle.
 
 ## Note
-* In this code I have trained using only TfIdf to values to achieve 97% score.
+* In this code I have trained using only TfIdf values to achieve 97% score.
 * Also, there is commented section where I have tried to implement word embedding for feature generation using Word2Vec.
